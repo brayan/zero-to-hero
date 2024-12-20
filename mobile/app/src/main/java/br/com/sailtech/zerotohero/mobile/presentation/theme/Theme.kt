@@ -1,6 +1,5 @@
-package br.com.sailtech.zerotohero.mobile.ui.theme
+package br.com.sailtech.zerotohero.mobile.presentation.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

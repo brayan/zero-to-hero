@@ -1,4 +1,4 @@
-package br.com.sailtech.zerotohero.mobile.ui.theme
+package br.com.sailtech.zerotohero.mobile.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
