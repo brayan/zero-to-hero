@@ -1,3 +1,6 @@
+rootProject.name = "zero-to-hero"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     repositories {
         google {
@@ -8,6 +11,7 @@ pluginManagement {
             }
         }
         mavenCentral()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         gradlePluginPortal()
     }
 }
@@ -16,9 +20,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
 
-rootProject.name = "Zero to Hero"
-include(":app")
+include(":composeApp")
+include(":feature:habits")
  

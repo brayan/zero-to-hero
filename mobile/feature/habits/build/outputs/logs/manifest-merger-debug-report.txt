@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/brayanbedritchuk/Documents/github/zero-to-hero/mobile/feature/habits/src/androidMain/AndroidManifest.xml:2:1-72
+INJECTED from /Users/brayanbedritchuk/Documents/github/zero-to-hero/mobile/feature/habits/src/androidMain/AndroidManifest.xml:2:1-72
+	package
+		INJECTED from /Users/brayanbedritchuk/Documents/github/zero-to-hero/mobile/feature/habits/src/androidMain/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/brayanbedritchuk/Documents/github/zero-to-hero/mobile/feature/habits/src/androidMain/AndroidManifest.xml:2:11-69
+uses-sdk
+INJECTED from /Users/brayanbedritchuk/Documents/github/zero-to-hero/mobile/feature/habits/src/androidMain/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/brayanbedritchuk/Documents/github/zero-to-hero/mobile/feature/habits/src/androidMain/AndroidManifest.xml
+INJECTED from /Users/brayanbedritchuk/Documents/github/zero-to-hero/mobile/feature/habits/src/androidMain/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/brayanbedritchuk/Documents/github/zero-to-hero/mobile/feature/habits/src/androidMain/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/brayanbedritchuk/Documents/github/zero-to-hero/mobile/feature/habits/src/androidMain/AndroidManifest.xml
