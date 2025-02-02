@@ -9,10 +9,6 @@ internal class GetHabitsUseCaseImpl(
 ) : GetHabitsUseCase {
 
     override suspend fun invoke(filter: HabitFilter): List<Habit> {
-        return when (filter) {
-            HabitFilter.ALL -> habitsRepository.getAllHabits()
-            HabitFilter.LAST_7_DAYS -> habitsRepository.getHabitsInLastDays(7)
-            HabitFilter.LAST_30_DAYS -> habitsRepository.getHabitsInLastDays(30)
-        }
+        return habitsRepository.getHabitsInLastDays(filter.days)
     }
 }

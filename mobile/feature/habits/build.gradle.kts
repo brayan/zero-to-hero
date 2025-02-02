@@ -44,6 +44,7 @@ kotlin {
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.androidx.compiler)
             implementation(libs.koin.core)
+            implementation(libs.kotlinx.datetime)
 //            implementation(project.dependencies.platform("androidx.compose:compose-bom:2024.12.01"))
         }
     }

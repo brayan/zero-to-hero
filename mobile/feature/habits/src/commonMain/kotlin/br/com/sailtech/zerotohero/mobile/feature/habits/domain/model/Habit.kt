@@ -1,3 +1,10 @@
 package br.com.sailtech.zerotohero.mobile.feature.habits.domain.model
 
-data class Habit(val id: Long, val name: String, val points: Int)
+import kotlinx.datetime.LocalDate
+
+data class Habit(
+    val id: Long,
+    val name: String,
+    val points: Int,
+    val completions: Map<LocalDate, Int>
+)
