@@ -27,5 +27,6 @@ dependencyResolutionManagement {
 include(":composeApp")
 include(":feature:habits")
 includeBuild("../shared")
+includeBuild("../backend")
 
  
