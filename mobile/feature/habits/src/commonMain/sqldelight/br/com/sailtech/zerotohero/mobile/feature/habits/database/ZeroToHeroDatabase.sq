@@ -1,0 +1,34 @@
+CREATE TABLE habit (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE habit_completions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    habit_id INTEGER NOT NULL,
+    date TEXT NOT NULL,
+    count INTEGER NOT NULL DEFAULT 1,
+    FOREIGN KEY (habit_id) REFERENCES habit(id) ON DELETE CASCADE
+);
+
+-- Queries for `habits`
+insertHabit:
+INSERT INTO habit (name) VALUES (:name);
+
+getAllHabits:
+SELECT habit.id, habit.name,
+       COALESCE(SUM(habit_completions.count), 0) AS points
+FROM habit
+LEFT JOIN habit_completions ON habit.id = habit_completions.habit_id
+GROUP BY habit.id;
+
+lastInsertRowId:
+SELECT last_insert_rowid();
+
+-- Queries for `habit_completions`
+insertCompletion:
+INSERT INTO habit_completions (habit_id, date, count)
+VALUES (:habit_id, :date, :count);
+
+getHabitCompletionHistory:
+SELECT * FROM habit_completions WHERE habit_id = :habit_id ORDER BY date DESC;

@@ -4,6 +4,16 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.compose)
+    alias(libs.plugins.kotlinxSerialization)
+    alias(libs.plugins.sqldelight)
+}
+
+sqldelight {
+    databases {
+        create("ZeroToHeroDatabase") {
+            packageName.set("br.com.sailtech.zerotohero.mobile.feature.habits.database")
+        }
+    }
 }
 
 kotlin {
@@ -27,12 +37,16 @@ kotlin {
     }
 
     sourceSets {
+        iosMain.dependencies {
+            implementation(libs.sqldelight.native.driver)
+        }
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.lifecycle.viewmodel.ktx)
             implementation(libs.androidx.navigation.compose)
             implementation(libs.koin.android)
+            implementation(libs.sqldelight.android.driver)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -45,7 +59,8 @@ kotlin {
             implementation(libs.androidx.compiler)
             implementation(libs.koin.core)
             implementation(libs.kotlinx.datetime)
-//            implementation(project.dependencies.platform("androidx.compose:compose-bom:2024.12.01"))
+            implementation(libs.sqldelight.runtime)
+            implementation(libs.sqldelight.coroutines.extensions)
         }
     }
 }
@@ -73,10 +88,12 @@ android {
             isMinifyEnabled = false
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     buildFeatures {
         compose = true
     }

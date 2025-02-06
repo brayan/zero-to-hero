@@ -43,7 +43,7 @@ fun HabitsScreen(innerPadding: PaddingValues, habitsViewModel: HabitsViewModel) 
     val state by habitsViewModel.state.collectAsState()
     val action by habitsViewModel.action.collectAsState(null)
 
-    var selectedFilter by remember { mutableStateOf(HabitFilter.LAST_YEAR) }
+    var selectedFilter by remember { mutableStateOf(HabitFilter.LAST_12_MONTHS) }
     val coroutineScope = rememberCoroutineScope()
 
     val totalPoints = (state as? HabitsViewState.Success)?.habits?.sumOf { it.points } ?: 0
