@@ -1,4 +1,4 @@
-rootProject.name = "zero-to-hero"
+rootProject.name = "zero-to-hero-mobile"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

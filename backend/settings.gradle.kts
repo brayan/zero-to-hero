@@ -1,1 +1,1 @@
-rootProject.name = "zerotohero"
+rootProject.name = "zero-to-hero-backend"
